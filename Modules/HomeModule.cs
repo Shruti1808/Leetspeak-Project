@@ -11,6 +11,12 @@ namespace Leetspeak
       Get["/"] = _ => {
         return View["index.cshtml"];
       };
+      Post["/results"] = _ => {
+        string userInput = Request.Form["phrase"];
+        Translator newTranslator = new Translator(userInput);
+        string output = newTranslator.Translate();
+        return View["results.cshtml", output];
+      };
     }
   }
 }
