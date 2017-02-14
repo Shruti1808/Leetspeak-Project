@@ -20,12 +20,19 @@ namespace Leetspeak.Objects
       {
         if (chars[i] == 's')
         {
-          chars[i] = 'z';
+          if (chars[i-1] != ' ')
+          {
+            chars[i] = 'z';
+          }
         }
         else if (chars[i] == 'S')
         {
-          chars[i] = 'Z';
+          if (chars[i-1] != ' ')
+          {
+            chars[i] = 'Z';
+          }
         }
+
       }
 
       _userString = string.Join("", chars);

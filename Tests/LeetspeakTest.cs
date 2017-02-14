@@ -48,12 +48,12 @@ namespace Leetspeak
     [Fact]
     public void Translate_ForWordsNotStartingWithS_ReplaceWithZ()
     {
-      string phrase05 = "Styles";
+      string phrase05 = "Styles and styles";
       Translator newTranslator = new Translator(phrase05);
 
       string result = newTranslator.Translate();
 
-      Assert.Equal("Styl3z", result);
+      Assert.Equal("Styl3z and styl3z", result);
     }
   }
 }
